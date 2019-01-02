@@ -13,11 +13,15 @@ class ArtistTest < Minitest::Test
       country: "United States"
     }
 
-    @artist = Artist.new(attributes)
+    @artist = Artist.new(@attributes)
   end
 
-  def tet_it_exists
+  def test_it_exists
     assert_instance_of Artist, @artist
+  end
+
+  def test_it_has_an_id
+    assert_equal "2", @artist.id
   end
 
 end
