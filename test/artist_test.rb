@@ -31,4 +31,8 @@ class ArtistTest < Minitest::Test
   def test_it_has_a_year_born
     assert_equal "1902", @artist.born
   end
+
+  def test_it_has_a_year_died
+    assert_equal "1984", @artist.died
+  end
 end
