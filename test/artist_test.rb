@@ -35,4 +35,9 @@ class ArtistTest < Minitest::Test
   def test_it_has_a_year_died
     assert_equal "1984", @artist.died
   end
+
+  def test_it_has_a_country_of_origin
+    assert_equal "United States", @artist.country
+  end
+  
 end
