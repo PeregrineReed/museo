@@ -23,4 +23,9 @@ class PhotographTest < Minitest::Test
     assert_equal "1", @photograph.id
   end
 
+  def test_it_has_a_name
+    expected = "Rue Mouffetard, Paris (Boy with Bottles)"
+    assert_equal expected, @photograph.name 
+  end
+
 end
