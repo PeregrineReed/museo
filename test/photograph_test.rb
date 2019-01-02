@@ -25,7 +25,11 @@ class PhotographTest < Minitest::Test
 
   def test_it_has_a_name
     expected = "Rue Mouffetard, Paris (Boy with Bottles)"
-    assert_equal expected, @photograph.name 
+    assert_equal expected, @photograph.name
+  end
+
+  def test_it_has_an_artist_id
+    assert_equal 4, @photograph.artist_id
   end
 
 end
