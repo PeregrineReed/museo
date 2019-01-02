@@ -10,8 +10,13 @@ class PhotographTest < Minitest::Test
       name: "Rue Mouffetard, Paris (Boy with Bottles)",
       artist_id: 4,
       year: 1954
+    }
 
     @photograph = Photograph.new(@attributes)
+  end
+
+  def test_it_exists
+    assert_instance_of Photograph, @photograph
   end
 
 end
