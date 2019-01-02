@@ -34,4 +34,10 @@ class Curator
     end
   end
 
+  def artists_with_multiple_photographs
+    @artists.reject do |artist|
+      find_photographs_by_artist(artist).size <= 1
+    end
+  end
+
 end
