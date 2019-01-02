@@ -16,4 +16,8 @@ class ArtistTest < Minitest::Test
     @artist = Artist.new(attributes)
   end
 
+  def tet_it_exists
+    assert_instance_of Artist, @artist
+  end
+
 end
