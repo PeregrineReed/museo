@@ -17,4 +17,8 @@ class CuratorTest < Minitest::Test
     assert_equal [], @curator.artists
   end
 
+  def test_it_starts_with_no_photographs
+    assert_equal [], @curator.photographs
+  end
+
 end
