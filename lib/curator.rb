@@ -40,4 +40,16 @@ class Curator
     end
   end
 
+  def artists_from(country)
+    @artists.reject do |artist|
+      artist.country != country
+    end
+  end
+
+  def photographs_taken_by_artist_from(country)
+    artists_from(country).map do |artist|
+      find_photographs_by_artist(artist)
+    end.flatten
+  end
+
 end
