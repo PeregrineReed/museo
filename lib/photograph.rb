@@ -1,7 +1,9 @@
 class Photograph
 
+  attr_reader :id
+
   def initialize(attributes)
-    @attributes = attributes
+    @id = attributes[:id]
   end
 
 end
