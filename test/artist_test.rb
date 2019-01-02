@@ -24,4 +24,8 @@ class ArtistTest < Minitest::Test
     assert_equal "2", @artist.id
   end
 
+  def test_it_has_a_name
+    assert_equal "Ansel Adams", @artist.name
+  end
+
 end
