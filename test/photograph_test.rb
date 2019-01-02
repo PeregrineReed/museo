@@ -19,4 +19,8 @@ class PhotographTest < Minitest::Test
     assert_instance_of Photograph, @photograph
   end
 
+  def test_it_has_an_id
+    assert_equal "1", @photograph.id
+  end
+
 end
