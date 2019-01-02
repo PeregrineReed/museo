@@ -1,11 +1,13 @@
 class Artist
 
   attr_reader :id,
-              :name
+              :name,
+              :born
 
   def initialize(attributes)
     @id = attributes[:id]
     @name = attributes[:name]
+    @born = attributes[:born]
   end
 
 end
