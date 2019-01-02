@@ -28,4 +28,7 @@ class ArtistTest < Minitest::Test
     assert_equal "Ansel Adams", @artist.name
   end
 
+  def test_it_has_a_year_born
+    assert_equal "1902", @artist.born
+  end
 end
