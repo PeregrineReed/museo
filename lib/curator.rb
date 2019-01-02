@@ -52,4 +52,24 @@ class Curator
     end.flatten
   end
 
+  def parse_csv(file)
+    CSV.open(file, headers: true, header_converters: :symbol)
+  end
+
+  def load_photographs(file)
+    photo_data = parse_csv(file)
+
+    photo_data.map do |photo|
+      photographs << Photograph.new(photo)
+    end
+  end
+
+  def load_artists(file)
+    artist_data = parse_csv(file)
+
+    artist_data.map do |artist|
+      artists << Artist.new(artist)
+    end
+  end
+
 end

@@ -1,9 +1,10 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
+require 'csv'
 require './lib/photograph'
 require './lib/artist'
 require './lib/curator'
-
 
 class CuratorTest < Minitest::Test
 
@@ -143,5 +144,27 @@ class CuratorTest < Minitest::Test
     expected = [@photo_2, @photo_3, @photo_4]
     assert_equal expected, @curator.photographs_taken_by_artist_from("United States")
     assert_equal [], @curator.photographs_taken_by_artist_from("Argentina")
+  end
+
+  def test_it_can_load_photos
+    @curator.load_photographs('./data/photographs.csv')
+
+    all_photos = @curator.photographs.all? do |photo|
+      photo.class == Photograph
+    end
+
+    assert_equal true, all_photos
+    assert_equal 4, @curator.photographs.length
+  end
+
+  def test_it_can_load_artists
+    @curator.load_artists('./data/artists.csv')
+
+    all_artists = @curator.artists.all? do |artist|
+      artist.class == Artist
+    end
+
+    assert_equal true, all_artists
+    assert_equal 3, @curator.artists.length
   end
 end
